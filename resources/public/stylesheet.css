@@ -1,0 +1,39 @@
+body {
+  font-family: "Comic Sans MS";
+  /*background-color:  #fff5cc;*/
+}
+
+.button {
+  background-color: #fff5cc;
+}
+
+#header {
+  text-align: center;
+}
+
+/*APP*/
+
+.click-me {
+  background-color:  #fff5cc;
+  text-align: center;
+  border: 5px solid #fff5cc;
+}
+
+/*SIGNIN PAGE*/
+
+.login-page {
+  font-size: 20px;
+  height: 100vh;
+  width: 100wh;
+  background-image: url("img/cooldoge.png");
+}
+
+.forms-section {
+  height: 100%;
+  background-color: white;
+}
+
+.input-form {
+  width: 100%;
+  border-radius: 10px;
+}
