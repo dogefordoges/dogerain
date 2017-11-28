@@ -1,9 +1,10 @@
 (set-env!
-  :source-paths #{"src/clj" "src/cljc" "src/cljs"}
+  :source-paths #{"src/clj" "src/cljc" "src/cljs" "src/db"}
   :resource-paths #{"resources"}
   :dependencies '[[adzerk/boot-cljs "2.1.4" :scope "test"]
                   [adzerk/boot-reload "0.5.2" :scope "test"]
                   [adzerk/boot-cljs-repl   "0.3.3" :scope "test"]
+                  [adzerk/boot-test "1.2.0" :scope "test"]
                   ; used by boot-cljs-repl
                   [com.cemerick/piggieback "0.2.1" :scope "test"]
                   [weasel "0.7.0" :scope "test"]
@@ -21,7 +22,9 @@
                   [com.taoensso/timbre "4.7.4"]
                   [compojure "1.6.0"]
                   [org.clojure/core.async "0.3.443"]
-                  [org.clojars.frozenlock/reagent-modals "0.2.8"]])
+                  [org.clojars.frozenlock/reagent-modals "0.2.8"]
+                  [com.layerware/hugsql "0.4.8"]
+                  [com.h2database/h2 "1.4.196"]])
 
 (task-options!
   pom {:project 'dogerain
@@ -35,6 +38,7 @@
   '[adzerk.boot-cljs :refer [cljs]]
   '[adzerk.boot-reload :refer [reload]]
   '[adzerk.boot-cljs-repl :refer [start-repl cljs-repl]]
+  '[adzerk.boot-test :refer :all]
   'dogerain.core
   '[nightlight.boot :refer [nightlight]])
 
@@ -62,4 +66,11 @@
   (comp
     (wait)
     (nightlight :port 4000)))
+
+(deftask testing [] (merge-env! :source-paths #{"test"}) identity)
+
+(deftask test-code []
+  (comp 
+    (testing)
+    (test)))
 

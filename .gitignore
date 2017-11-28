@@ -8,3 +8,4 @@ pom.xml.asc
 !.gitignore
 data/
 *.db
+db-info.edn

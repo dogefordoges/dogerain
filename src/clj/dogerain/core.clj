@@ -9,8 +9,13 @@
             [taoensso.sente.server-adapters.http-kit :refer [get-sch-adapter]]
             [taoensso.timbre :as timbre :refer (tracef debugf infof warnf errorf)]
             [compojure.core :refer [GET POST defroutes]]
-            [compojure.route :as route])  
+            [compojure.route :as route]
+            [hugsql.core :as hugsql])    
   (:gen-class))
+
+(def db (clojure.edn/read-string (slurp "db-info.edn")))
+
+(hugsql/def-db-fns "dogerain/accounts.sql")
 
 (def dogecoin-api-key "d817-ca1e-ed72-71c7")
 
