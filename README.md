@@ -1,11 +1,20 @@
-This is a sample project that demonstrates how to create a full stack (Clojure + ClojureScript) project using the [Boot](http://boot-clj.com/) build tool. With `boot run`, you can instantly see your project at [http://localhost:3000/](http://localhost:3000/) and any edits to the ClojureScript will be automatically pushed to the browser. With `boot build`, you can make a standalone JAR file that includes your entire client and server code.
+This is the official repo for the dogerain, much wow project that uses a full stack (Clojure + ClojureScript) project using the [Boot](http://boot-clj.com/) build tool. With `boot run`, you can instantly see the project at [http://localhost:3000/](http://localhost:3000/) and any edits to the ClojureScript will be automatically pushed to the browser. With `boot build`, you can make a standalone JAR file that includes your entire client and server code.
 
+*Note*
+You have to have h2 already installed, and have created a database called dogerain using the h2 console. Then make sure to create a file called `db-info.edn` in the project directory. It should look like this:
+
+```clojure
+{:dbtype "h2" :dbname "~/dogerain" :user "*username*" :password "*password*"}
+```
+
+Then all of the build tools should work!
 ## Build Instructions
 
 * Install the latest JDK
 * Install [Boot](http://boot-clj.com/)
 * Develop with `boot run`
 * Build JAR file with `boot build`
+* Test with `boot test-code`
 
 ## Contents
 

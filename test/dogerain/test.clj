@@ -15,7 +15,7 @@
 
 (dr/drop-accounts-table dr/db)
 
-;(dr/create-storms-table dr/db)
+(dr/create-storms-table dr/db)
 
 (dr/insert-storm dr/db {:username "fooboo" :duration 10 :p1_lat 0.5 :p1_long 1.4 :p2_lat 0.6 :p2_long 0.8 :p3_lat 0.9 :p3_long 1.6 :p4_lat 4.5 :p4_long 6.7})
 
