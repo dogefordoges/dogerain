@@ -23,6 +23,11 @@ Then all of the build tools should work!
 * `src/cljc` The client and server agnostic code
 * `src/cljs` The client-side code
 
+## Developing with Nightlight
+This project includes a builtin IDE that will work in your browser! All you have to do to use it is:
+`boot night`
+Then look up http://localhost:4000 in your browser and enjoy a wonderful clojure development experience!
+
 ## Connecting to the REPL
 After starting the development environment with `boot run`, open up a new terminal and run `boot repl -c`.
 
