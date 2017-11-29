@@ -1,3 +1,4 @@
+# Dogerain, Much Wow!
 This is the official repo for the dogerain, much wow project that uses a full stack (Clojure + ClojureScript) project using the [Boot](http://boot-clj.com/) build tool. With `boot run`, you can instantly see the project at [http://localhost:3000/](http://localhost:3000/) and any edits to the ClojureScript will be automatically pushed to the browser. With `boot build`, you can make a standalone JAR file that includes your entire client and server code.
 
 *Note*
